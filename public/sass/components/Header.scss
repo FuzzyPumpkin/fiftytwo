@@ -1,0 +1,46 @@
+.header {
+    width: 100%;
+    
+
+    &__nav {
+        @include flex-row;
+        justify-content: flex-end;
+        width: 100%;
+        position: fixed;
+        top: 0; left: 0;
+        z-index: 20;
+        padding: 4rem;
+        background-color: rgba($color-white, .8);
+    }
+    &__list {
+        list-style: none;
+        @include flex-row;
+        width: 50%;
+        justify-content: space-between;
+
+        &--link{
+            text-decoration: none;
+            color: $color-text;
+            font-size: 2.4rem;
+            &:hover {
+                color: $color-blue;
+            }
+        }
+    }
+    &__logo {
+        width: 40.5rem; height: 40rem;
+    }
+    &__container {
+        @include flex-row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 17rem 9rem;
+    }
+    &__text {
+        text-align: center;
+        &--byline {
+            font-size: 3rem;
+            margin-top: 2rem;
+        }
+    }
+}

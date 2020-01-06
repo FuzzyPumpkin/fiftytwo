@@ -1,13 +1,16 @@
 h1 {
+  font-family: "Ubuntu", sans-serif;
   font-size: 7.2rem;
 }
 
 h2 {
+  font-family: "Ubuntu", sans-serif;
   font-size: 6.4rem;
   font-weight: 700;
 }
 
 h3 {
+  font-family: "Ubuntu", sans-serif;
   font-weight: 700;
   font-size: 3.6rem;
 }
@@ -33,5 +36,144 @@ body {
   background-color: #F9F7F7;
   position: relative;
   height: 100vh;
+}
+
+.header {
+  width: 100%;
+}
+
+.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  padding: 4rem;
+  background-color: rgba(249, 247, 247, 0.8);
+}
+
+.header__list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 50%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header__list--link {
+  text-decoration: none;
+  color: #1B161D;
+  font-size: 2.4rem;
+}
+
+.header__list--link:hover {
+  color: #4FD0E6;
+}
+
+.header__logo {
+  width: 40.5rem;
+  height: 40rem;
+}
+
+.header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 17rem 9rem;
+}
+
+.header__text {
+  text-align: center;
+}
+
+.header__text--byline {
+  font-size: 3rem;
+  margin-top: 2rem;
+}
+
+.premise {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 6rem 0;
+  background: url("/public/images/symbol-defs.svg#icon-premiseBg") no-repeat;
+}
+
+.premise__container {
+  width: 100%;
+  padding: 4.5rem 11.5rem 0 11.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2.2rem;
+  line-height: 3.3rem;
+}
+
+.premise__blurb {
+  background-color: #F9F7F7;
+}
+
+.premise__synopsis {
+  background-color: #D9DB72;
+}
+
+.premise__synopsis--text {
+  margin-top: 3rem;
+}
+
+.premise__synopsis--text:nth-of-type(1) {
+  margin-bottom: 3rem;
+}
+
+.premise__blurb, .premise__synopsis {
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 1rem;
+  padding: 4.5rem;
+  text-align: center;
+  margin: 0 3.5rem;
 }
 /*# sourceMappingURL=App.css.map */
