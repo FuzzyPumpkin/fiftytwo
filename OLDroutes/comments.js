@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
-var Campground = require("../models/campgrounds");
-var Comment = require("../models/comments");
+var Campground = require("../OLDmodels/campgrounds");
+var Comment = require("../OLDmodels/comments");
 var middle = require("../middleware");
 
 //Comments new/create (nested in campgrounds)
