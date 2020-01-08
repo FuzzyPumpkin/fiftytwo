@@ -111,6 +111,7 @@ body {
 
 .header__text {
   text-align: center;
+  margin-left: 3rem;
 }
 
 .header__text--byline {
@@ -131,8 +132,19 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 6rem 0;
-  background: url("/public/images/symbol-defs.svg#icon-premiseBg") no-repeat;
+  padding: 12rem 0;
+}
+
+.premise__background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #C998BE;
+  -webkit-clip-path: url(#premiseClip);
+          clip-path: url(#premiseClip);
+  z-index: -1;
 }
 
 .premise__container {
@@ -175,5 +187,85 @@ body {
   padding: 4.5rem;
   text-align: center;
   margin: 0 3.5rem;
+}
+
+.projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.projects__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.projects__card {
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 34rem;
+  height: 45rem;
+}
+
+.projects__thumbnail {
+  width: 100%;
+}
+
+.projects__tech {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: #4FD0E6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: -4rem .5rem 0 .5rem;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.projects__tech--icon {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.projects__techContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 /*# sourceMappingURL=App.css.map */

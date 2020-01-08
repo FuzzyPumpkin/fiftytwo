@@ -3,9 +3,16 @@
     width: 100%;
     position: relative;
     align-items: center;
-    padding: 6rem 0;
-    background: url("/public/images/symbol-defs.svg#icon-premiseBg") no-repeat;
+    padding: 12rem 0;
 
+    &__background {
+        position: absolute;
+        height: 100%; width: 100%;
+        top: 0; left: 0;
+        background-color: $color-purple;
+        clip-path: url(#premiseClip);
+        z-index: -1;
+    }
     &__container {
         width: 100%;
         padding: 4.5rem 11.5rem 0 11.5rem;

@@ -1,0 +1,33 @@
+.projects {
+    @include flex-column;
+    align-items: center;
+
+    &__container {
+        @include flex-row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    &__card {
+        @include shadow;
+        width: 34rem; height: 45rem;
+    }
+    &__thumbnail {width: 100%;}
+    &__tech {
+        width: 6rem; height: 6rem;
+        border-radius: 50%;
+        background-color: $color-blue;
+        @include flex-row;
+        justify-content: center;
+        align-items: center;
+        margin: -4rem .5rem 0 .5rem;
+        @include shadow;
+
+        &--icon {
+            width: 3.2rem; height: 3.2rem;
+        }
+    }
+    &__techContainer {
+        @include flex-row;
+        justify-content: flex-end;
+    }
+}
