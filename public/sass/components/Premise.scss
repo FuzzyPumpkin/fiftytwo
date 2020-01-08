@@ -23,9 +23,23 @@
     }
     &__blurb {
         background-color: $color-white;
+        width: 60%;
+
+        & p {
+            margin-bottom: 3rem;
+            text-align: justify;
+        }
+        & p:nth-last-of-type(){
+            margin-bottom: 0;
+        }
     }
     &__synopsis {
         background-color: $color-green;
+        width: 40%;
+        @include flex-column;
+        justify-content: center;
+        align-items: center;
+        
         &--text {
             margin-top: 3rem;
             &:nth-of-type(1){margin-bottom: 3rem;}
