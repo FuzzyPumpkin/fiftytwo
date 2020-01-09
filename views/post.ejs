@@ -11,6 +11,11 @@
 <body>
     <header class="header">
         <nav class="header__nav">
+            <div class="header__postNav--logoContainer">
+                <svg class="header__postNav--logo">
+                    <use xlink:href="/images/symbol-defs.svg#icon-fullLogo"></use>
+                </svg>
+            </div>
             <ul class="header__list">
                 <li><a href="#premise" class="header__list--link">the premise</a></li>
                 <li><a href="#projects" class="header__list--link">the projects</a></li>
@@ -20,7 +25,7 @@
         <div class="header__post">
             <img src="/images/testImg.jpg" class="header__postImg" alt="project preview image">
             <div class="header__postNav">
-                <h1 class="header__postNav--title">Week 1 - <span class="h1--heavyweight">fiftytwo/52</span></h1>
+                <h1 class="header__postNav--title"><span class="h1--lightweight">Week 1 - </span>fiftytwo/52</h1>
                 <div class="header__postNav--buttonContainer">
                     <a href="#" class="header__postNav--link"><button class="header__postNav--button">Site</button></a>
                     <a href="#" class="header__postNav--link"><button class="header__postNav--button">Github</button></a>
@@ -29,18 +34,21 @@
             </div>
         </div>
     </header>
-    <h2>- technologies used -</h2>
-    <ul>
-        <li>Node.js</li>
-        <li>MongoDB</li>
-        <li>Sass</li>
-    </ul>
-    <h2>- the process -</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quibusdam esse amet animi laboriosam tenetur placeat libero voluptatem aspernatur neque nesciunt cupiditate tempore saepe, molestias consectetur at fugiat nostrum ipsum!</p>
-    <h2>- challenges -</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quibusdam esse amet animi laboriosam tenetur placeat libero voluptatem aspernatur neque nesciunt cupiditate tempore saepe, molestias consectetur at fugiat nostrum ipsum!</p>
-    <h2>- takeaways -</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quibusdam esse amet animi laboriosam tenetur placeat libero voluptatem aspernatur neque nesciunt cupiditate tempore saepe, molestias consectetur at fugiat nostrum ipsum!</p>
-
+    <main class="post">
+        <h2 class="post__subheading">- technologies used -</h2>
+        <ul class="post__list">
+            <li class="post__listitem">Node.js</li>
+            <li class="post__listitem">MongoDB</li>
+            <li class="post__listitem">Sass</li>
+        </ul>
+        <h2 class="post__subheading">- the process -</h2>
+        <p class="post__blurb">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quibusdam esse amet animi laboriosam tenetur placeat libero voluptatem aspernatur neque nesciunt cupiditate tempore saepe, molestias consectetur at fugiat nostrum ipsum!</p>
+        <h2 class="post__subheading">- challenges -</h2>
+        <p class="post__blurb">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quibusdam esse amet animi laboriosam tenetur placeat libero voluptatem aspernatur neque nesciunt cupiditate tempore saepe, molestias consectetur at fugiat nostrum ipsum!</p classname="post__blurb">
+    </main>
+    <div class="post__takeaways">
+        <h2 class="post__subheading">- takeaways -</h2>
+        <p class="post__blurb">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quibusdam esse amet animi laboriosam tenetur placeat libero voluptatem aspernatur neque nesciunt cupiditate tempore saepe, molestias consectetur at fugiat nostrum ipsum!</p classname="post__blurb">
+    </div>
 </body>
 </html>
