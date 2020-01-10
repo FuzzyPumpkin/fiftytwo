@@ -62,6 +62,48 @@ body {
   padding-top: 10rem;
 }
 
+.login__field, .edit__field {
+  width: 100%;
+  background-color: #F9F7F7;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 1rem;
+  font-size: 2.4rem;
+  line-height: 5rem;
+  padding: 0 2rem;
+  margin-top: 3rem;
+}
+
+.login__field::-webkit-input-placeholder, .edit__field::-webkit-input-placeholder {
+  color: rgba(27, 22, 29, 0.5);
+}
+
+.login__field:-ms-input-placeholder, .edit__field:-ms-input-placeholder {
+  color: rgba(27, 22, 29, 0.5);
+}
+
+.login__field::-ms-input-placeholder, .edit__field::-ms-input-placeholder {
+  color: rgba(27, 22, 29, 0.5);
+}
+
+.login__field::placeholder, .edit__field::placeholder {
+  color: rgba(27, 22, 29, 0.5);
+}
+
+.login__button, .edit__button {
+  border: none;
+  background-color: #D9DB72;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 2.4rem;
+  padding: 1rem;
+}
+
+.login__button:hover, .edit__button:hover {
+  color: #F9F7F7;
+}
+
 .login__form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -76,48 +118,86 @@ body {
   width: 30%;
 }
 
-.login__field {
-  width: 100%;
-  background-color: #F9F7F7;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border: none;
-  border-radius: 1rem;
-  font-size: 2.4rem;
-  line-height: 5rem;
-  padding: 0 2rem;
-  margin-top: 3rem;
-}
-
-.login__field::-webkit-input-placeholder {
-  color: rgba(27, 22, 29, 0.5);
-}
-
-.login__field:-ms-input-placeholder {
-  color: rgba(27, 22, 29, 0.5);
-}
-
-.login__field::-ms-input-placeholder {
-  color: rgba(27, 22, 29, 0.5);
-}
-
-.login__field::placeholder {
-  color: rgba(27, 22, 29, 0.5);
-}
-
 .login__button {
-  border: none;
-  background-color: #D9DB72;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-size: 2.4rem;
-  padding: 1rem;
   width: 100%;
   margin-top: 1.5rem;
 }
 
 .edit {
-  background-color: rgba(79, 208, 230, 0.5);
+  background-color: rgba(79, 208, 230, 0.3);
+}
+
+.edit__checkbox {
+  height: 2.1rem;
+  width: 2.1rem;
+}
+
+.edit__checkboxLabel {
+  font-size: 2.4rem;
+  margin-left: 1rem;
+}
+
+.edit__button {
+  width: 30%;
+}
+
+.edit__field--name, .edit__field--url {
+  margin-left: 6.5rem;
+}
+
+.edit__field--paragraph {
+  height: 18rem;
+  resize: none;
+  font-size: 2.4rem;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.edit__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 75%;
+  margin-bottom: 10rem;
+}
+
+.edit__formLine {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.edit__formLine--tech {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.edit__tech {
+  margin: 3rem 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header {

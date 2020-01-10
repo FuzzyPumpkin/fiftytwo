@@ -4,39 +4,82 @@
     align-items: center;
     padding-top: 10rem;
 }
+.login__field, .edit__field {
+    width: 100%;
+    background-color: $color-white;
+    @include shadow;
+    border: none;
+    border-radius: 1rem;
+    font-size: 2.4rem;
+    line-height: 5rem;
+    padding: 0 2rem;
+    margin-top: 3rem;
+    &::placeholder {
+        color: rgba($color-text, .5);
+    }
+}
+.login__button, .edit__button {
+    border: none;
+    background-color: $color-green;
+    @include shadow;
+    font-size: 2.4rem;
+    padding: 1rem;
+    &:hover {color: $color-white;}
+}
 .login {
     &__form {
         @include flex-column;
         align-items: center;
         width: 30%;
     }
-    &__field {
-        width: 100%;
-        background-color: $color-white;
-        @include shadow;
-        border: none;
-        border-radius: 1rem;
-        font-size: 2.4rem;
-        line-height: 5rem;
-        padding: 0 2rem;
-        margin-top: 3rem;
-
-        &::placeholder {
-            color: rgba($color-text, .5);
-        }
-    }
     &__button {
-        border: none;
-        background-color: $color-green;
-        @include shadow;
-        font-size: 2.4rem;
-        padding: 1rem;
         width: 100%;
         margin-top: 1.5rem;
     }
 }
 
 .edit {
-    background-color: rgba($color-blue, .5);
+    background-color: rgba($color-blue, .3);
 
+    &__checkbox {
+        height: 2.1rem; width: 2.1rem;
+    }
+    &__checkboxLabel {
+        font-size: 2.4rem;
+        margin-left: 1rem;
+    }
+    &__button {
+        width: 30%;
+    }
+    &__field {
+        &--name, &--url {
+            margin-left: 6.5rem;
+        }
+        &--paragraph {
+            height: 18rem;
+            resize: none;
+            font-size: 2.4rem;
+            font-family: "Ubuntu", sans-serif;
+        }
+    }
+    &__form {
+        @include flex-column;
+        align-items: center;
+        width: 75%;
+        margin-bottom: 10rem;
+    }
+    &__formLine {
+        @include flex-row;
+        width: 100%;
+        justify-content: center;
+
+        &--tech {
+            flex-wrap: wrap;
+        }
+    }
+    &__tech {
+        margin: 3rem 5rem;
+        @include flex-row;
+        align-items: center;
+    }
 }
