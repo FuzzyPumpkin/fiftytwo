@@ -52,36 +52,35 @@
     <section class="projects" id="projects">
         <h2>- the projects -</h2>
         <main class="projects__container">
-            <article class="projects__card">
-                <div class="projects__num">1</div>
-                <div class="projects__thumbnailContainer">
-                    <img class="projects__thumbnail" src="/images/testImg.jpg" alt="project preview image">
-                </div>
-                <div class="projects__techContainer">
-                    <div class="projects__tech">
-                        <svg class="projects__tech--icon" aria-label="React">
-                            <use xlink:href="/images/symbol-defs.svg#icon-react"></use>
-                        </svg>
+            <% posts.forEach(function(post){ %>
+                <article class="projects__card">
+                    <div class="projects__num"><%= post.weekNumber %></div>
+                    <div class="projects__thumbnailContainer">
+                        <img class="projects__thumbnail" src="/images/<%= post.imageName%>.jpg" alt="project preview image">
                     </div>
-                    <div class="projects__tech">
-                        <svg class="projects__tech--icon" aria-label="Sass">
-                            <use xlink:href="/images/symbol-defs.svg#icon-sass"></use>
-                        </svg>
+                    <div class="projects__techContainer">
+                        <% post.tech.forEach(function(tech) { %>
+                            <div class="projects__tech">
+                                <svg class="projects__tech--icon" aria-label="<%= tech %>">
+                                    <use xlink:href="/images/symbol-defs.svg#icon-<%= tech %>"></use>
+                                </svg>
+                            </div>
+                        <% }) %>
                     </div>
-                </div>
-                <div class="projects__info">
-                    <h3>Site Name</h3>
-                    <p class="projects__blurb">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem odio odit fugiat architecto! </p>
-                </div>
-                <div class="projects__buttonContainer">
-                    <a href="#" class="projects__link">
-                        <button type="button" class="projects__button">View Post</button>
-                    </a>
-                    <a href="#" class="projects__link">
-                        <button type="button" class="projects__button projects__button--site">View Site</button>
-                    </a>
-                </div>
-            </article>
+                    <div class="projects__info">
+                        <h3><%= post.projectName %></h3>
+                        <p class="projects__blurb"><%= post.synopsis %></p>
+                    </div>
+                    <div class="projects__buttonContainer">
+                        <a href="/posts/<%= post._id %>" class="projects__link">
+                            <button type="button" class="projects__button">View Post</button>
+                        </a>
+                        <a href="<%= post.siteURL %>" class="projects__link">
+                            <button type="button" class="projects__button projects__button--site">View Site</button>
+                        </a>
+                    </div>
+                </article>
+            <% }); %>
         </main>
     </section>
 

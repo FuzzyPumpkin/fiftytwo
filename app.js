@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
-
+const Posts = require("./models/posts.js");
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -31,28 +31,21 @@ app.get("/edit", function(req, res){
 app.get("/login", function(req, res){
     res.render("login");
  });
-app.get("/post", function(req, res){
-    res.render("post");
+app.get("/posts/:id", function(req, res){
+    Posts.findById(req.params.id).exec(function(err, foundPost){
+       if(err){console.log(err);}
+       else{
+          res.render("post", {post: foundPost});
+       }
+    });
+});
+
+app.get("/", (req, res) => {
+    Posts.find({}, function(err, allPosts){
+        if(err){console.log("error in retrieving posts");}
+        else{res.render("home", {posts: allPosts});}
+    });
  });
-
-app.get("/", async (req, res) => {
-    // let post = await Post.create({
-    //     weekNumber: "0",
-    //     projectName: "Test project name",
-    //     GithubURL: "https://github.com/FuzzyPumpkin/fiftytwo",
-    //     siteURL: "https://fuzzypumpkin.github.io/",
-    //     processTxt: "I followed a process, really",
-    //     challengesTxt: "Challenges are just tests with a longer name.",
-    //     takeawaysTxt: "Calgon!",
-    //     imageName: "testImg",
-    //     tech: ["Node.js", "Sass"]}
-    // );
-    // res.send(post)
-    res.render("home");
- });
-
-
-
 
 
 app.listen(port, function() {console.log("server started");});

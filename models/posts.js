@@ -10,7 +10,9 @@ const PostSchema = new mongoose.Schema({
     challengesTxt: String,
     takeawaysTxt: String,
     imageName: String,
-    tech: Array
+    tech: Array,
+    synopsis: String,
+    designURL: String
 });
 
 module.exports = mongoose.model("Post", PostSchema);
