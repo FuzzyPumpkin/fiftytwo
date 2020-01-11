@@ -5,7 +5,12 @@
     padding: 0;
     box-sizing: border-box;
 }
-html {font-size: 62.5%;}
+html {
+    font-size: 62.5%;
+    @include respond(phone){
+        font-size: 40%;
+    }
+}
 body {
     font-family: "Ubuntu", sans-serif;
     font-weight: 400;

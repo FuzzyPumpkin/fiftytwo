@@ -1,7 +1,9 @@
 .projects {
     @include flex-column;
     align-items: center;
-
+    @include respond(phone){
+        margin-top: 5rem;
+    }
     &__container {
         @include flex-row;
         flex-wrap: wrap;

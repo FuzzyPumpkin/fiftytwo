@@ -1,6 +1,9 @@
 .post {
     @include flex-column;
     padding: 0rem 11.5rem 4rem 11.5rem;
+    @include respond(phone){
+        padding: 0rem 5rem 4rem 5rem;
+    }
 
     &__blurb {
         font-size: 2.4rem;
@@ -29,9 +32,15 @@
     &__subheading {
         text-align: center;
         margin: 7.5rem 0 3rem 0;
+        @include respond(ipad){
+            font-size: 4rem;
+        }
     }
     &__takeaways {
         padding: .1rem 11.5rem 6rem 11.5rem;
         background-color: $color-purple;
+        @include respond(phone){
+            padding: .1rem 5rem 6rem 5rem;
+        }
     }
 }

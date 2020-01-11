@@ -6,17 +6,32 @@
         align-items: center;
         justify-content: space-between;
         padding: 17rem 9rem;
+        @include respond(ipad){
+            padding: 10rem 7rem 5rem 7rem;
+        }
+        @include respond(phone){
+            padding: 10rem 4rem 5rem 4rem;
+        }
     }
     &__list {
         list-style: none;
         @include flex-row;
         width: 50%;
         justify-content: space-between;
+        @include respond(ipad){
+            width: 70%;
+        }
+        @include respond(phone){
+            width: 80%;
+        }
 
         &--link{
             text-decoration: none;
             color: $color-text;
             font-size: 2.4rem;
+            @include respond(phone){
+                font-size: 2rem;
+            }
             &:hover {
                 color: $color-blue;
             }
@@ -35,6 +50,9 @@
         padding: 4rem;
         background-color: $color-white;
         @include shadow;
+        @include respond(smDesktop){
+            padding: 2rem 4rem;
+        }
     }
     &__post {
         position: relative;
@@ -45,6 +63,13 @@
         justify-content: flex-end;
         align-items: center;
         margin-top: 10.8rem;
+        @include respond(ipad){
+            margin-top: 6rem;
+            height: 45rem;
+        }
+        @include respond(ipad){
+            height: 35rem;
+        }
     }
     &__postImg {
         width: 100%;
@@ -70,6 +95,10 @@
             padding: 1.5rem;
             @include shadow;
             width: 100%;
+            @include respond(ipad){
+                font-size: 2.5rem;
+                padding: 1rem;
+            }
             &:hover {color: $color-blue;}
         }
         &--buttonContainer {
@@ -85,9 +114,20 @@
         }
         &--title {
             margin: 4.6rem;
+            @include respond(ipad){
+                font-size: 5rem;
+                margin: 2rem 4rem;
+            }
+            @include respond(phone){
+                font-size: 4rem;
+                margin: 2rem;
+            }
         }
         &--logo {
             width: 15rem; height: 15rem;
+            @include respond(ipad){
+                width: 10rem; height: 10rem;
+            }
         }
         &--logoContainer {
             width: 20rem; height: 20rem;
@@ -99,14 +139,9 @@
             @include flex-row;
             justify-content: center;
             align-items: center;
-            &::before {
-                content: "";
-                width: 20rem; height: 20rem;
-                position: absolute;
-                top: 0; left: 0;
-                border-radius: 50%;
-                @include shadow;
-                z-index: -1;
+            @include shadow;
+            @include respond(ipad){
+                width: 12rem; height: 12rem;
             }
         }
     }
@@ -116,6 +151,9 @@
         &--byline {
             font-size: 3rem;
             margin-top: 2rem;
+            @include respond(smDesktop){
+                font-size: 2.4rem;
+            }
         }
     }
 }
