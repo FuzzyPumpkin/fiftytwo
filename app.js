@@ -4,13 +4,41 @@ const bodyParser = require("body-parser");
 const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 const Posts = require("./models/posts.js");
+const User = require("./models/users.js");
 const methodOverride = require("method-override");
+const passport = require("passport");
+const localStrategy = require("passport-local");
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
+
+//Passport config for authentication
+app.use(require("express-session")({
+    secret: "Pumpkin is yummy",
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new localStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+//set current user for gatekeeping on edit/deletes
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    next();
+});
+//function to check if logged in (as there is only one authorized user, auth check is simplified)
+const isLoggedIn = function(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login");
+}
 
 
 //DB connection
@@ -28,7 +56,7 @@ mongoose.connect('mongodb+srv://kariminger:12mI94Zzr94P2AY@cluster0-fomve.mongod
 
 //---ROUTES---
 // Edit
-app.get("/edit", function(req, res){
+app.get("/edit", isLoggedIn, function(req, res){
     res.render("edit");
 });
 app.get("/edit/:id", function(req, res){
@@ -49,7 +77,7 @@ app.put("/posts/:id", function(req, res){
     });
 });
 // Create
-app.get("/new", function(req, res){
+app.get("/new", isLoggedIn, function(req, res){
     res.render("new");
 });
 app.post("/posts", function(req, res){
@@ -76,6 +104,15 @@ app.post("/posts", function(req, res){
 //Login
 app.get("/login", function(req, res){
     res.render("login");
+});
+app.post("/login", passport.authenticate("local", 
+    {
+        successRedirect: "/",
+        failureRedirect: "/error"
+    }), function(req, res){
+});
+app.get("/error", function(req, res){
+    res.render("error");
 });
 //Show
 app.get("/posts/:id", function(req, res){
