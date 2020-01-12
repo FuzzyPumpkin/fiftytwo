@@ -7,6 +7,9 @@
 }
 html {
     font-size: 62.5%;
+    @include respond(smDesktop){
+        font-size: 50%;
+    }
     @include respond(phone){
         font-size: 40%;
     }

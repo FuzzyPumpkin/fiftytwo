@@ -1,5 +1,5 @@
 .login, .edit {
-    margin-top: 10.5rem;
+    margin-top: 5rem;
     @include flex-column;
     align-items: center;
     padding-top: 10rem;
@@ -41,15 +41,9 @@
 .edit {
     background-color: rgba($color-blue, .3);
 
-    &__checkbox {
-        height: 2.1rem; width: 2.1rem;
-    }
-    &__checkboxLabel {
-        font-size: 2.4rem;
-        margin-left: 1rem;
-    }
     &__button {
         width: 30%;
+        margin-top: 5rem;
     }
     &__field {
         &--name, &--url {
@@ -72,14 +66,5 @@
         @include flex-row;
         width: 100%;
         justify-content: center;
-
-        &--tech {
-            flex-wrap: wrap;
-        }
-    }
-    &__tech {
-        margin: 3rem 5rem;
-        @include flex-row;
-        align-items: center;
     }
 }

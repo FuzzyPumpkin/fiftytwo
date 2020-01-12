@@ -25,46 +25,25 @@
     </header>
     <main class="edit">
         <h1 class="h1--lightweight">Edit Post</h1>
-        <form class="edit__form">
+        <form class="edit__form" action="/posts/<%= post.id %>?_method=PUT" method="POST">
             <div class="edit__formLine">
-                <input type="text" class="edit__field edit__field--week" name="weekNum" placeholder="week number">
-                <input type="text" class="edit__field edit__field--name" name="projectName" placeholder="project name">
+                <input type="text" class="edit__field edit__field--week" value="<%= post.weekNumber %>" name="post[weekNumber]" placeholder="week number">
+                <input type="text" class="edit__field edit__field--name" value="<%= post.projectName %>" name="post[projectName]" placeholder="project name">
             </div>
             <div class="edit__formLine">
-                <input type="text" class="edit__field edit__field--github" name="github" placeholder="Github repo address">
-                <input type="text" class="edit__field edit__field--url" name="url" placeholder="site address">
+                <input type="text" class="edit__field edit__field--github" value="<%= post.GithubURL %>" name="post[GithubURL]" placeholder="Github repo address">
+                <input type="text" class="edit__field edit__field--url" value="<%= post.siteURL %>" name="post[siteURL]" placeholder="site address">
             </div>
-            <textarea class="edit__field edit__field--paragraph" name="synopsis" placeholder="synopsis"></textarea>
-            <textarea class="edit__field edit__field--paragraph" name="process" placeholder="the process"></textarea>
-            <textarea class="edit__field edit__field--paragraph" name="challenges" placeholder="challenges"></textarea>
-            <textarea class="edit__field edit__field--paragraph" name="takeaways" placeholder="takeaways"></textarea>
+            <textarea class="edit__field edit__field--paragraph" name="post[synopsis]" placeholder="synopsis"><%= post.synopsis %></textarea>
+            <textarea class="edit__field edit__field--paragraph" name="post[process]" placeholder="the process"><%= post.processTxt %></textarea>
+            <textarea class="edit__field edit__field--paragraph" name="post[challengesTxt]" placeholder="challenges"><%= post.challengesTxt %></textarea>
+            <textarea class="edit__field edit__field--paragraph" name="post[takeawaysTxt]" placeholder="takeaways"><%= post.takeawaysTxt %></textarea>
             <div class="edit__formLine">
-                <input type="text" class="edit__field edit__field--image" name="imgName" placeholder="image name">
-                <input type="text" class="edit__field edit__field--name" name="designURL" placeholder="design image URL">
+                <input type="text" class="edit__field edit__field--image" value="<%= post.imageName %>" name="post[imageName]" placeholder="image name">
+                <input type="text" class="edit__field edit__field--name" value="<%= post.designURL %>" name="post[designURL]" placeholder="design image URL">
             </div>
+            <input type="text" class="edit__field" value="<%= post.tech %>" name="post[tech]" placeholder="tech used">
             
-            <div class="edit__formLine edit__formLine--tech">
-                <div class="edit__tech">
-                    <input class="edit__checkbox" type="checkbox" id="React" name="tech" value="React">
-                    <label class="edit__checkboxLabel for="React">React</label>
-                </div>
-                <div class="edit__tech">
-                    <input class="edit__checkbox" type="checkbox" id="Vue" name="tech" value="Vue">
-                    <label class="edit__checkboxLabel for="Vue">Vue</label>
-                </div>
-                <div class="edit__tech">
-                    <input class="edit__checkbox" type="checkbox" id="Node.js" name="tech" value="Node.js">
-                    <label class="edit__checkboxLabel for="Node.js">Node.js</label>
-                </div>
-                <div class="edit__tech">
-                    <input class="edit__checkbox" type="checkbox" id="Sass" name="tech" value="Sass">
-                    <label class="edit__checkboxLabel for="Sass">Sass</label>
-                </div>
-                <div class="edit__tech">
-                    <input class="edit__checkbox" type="checkbox" id="MongoDB" name="tech" value="MongoDB">
-                    <label class="edit__checkboxLabel for="MongoDB">MongoDB</label>
-                </div>
-            </div>
             <button class="edit__button" type="submit">Submit</button>
         </form>
     </main>

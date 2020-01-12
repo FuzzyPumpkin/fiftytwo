@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>fiftytwo/52</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A challenge site, debuting 52 projects completed in 52 days. 
+        See my portfolio at www.kariminger.com.">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/sass/App.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="header__nav">
+            <div class="header__postNav--logoContainer">
+                <svg class="header__postNav--logo">
+                    <use xlink:href="/images/symbol-defs.svg#icon-fullLogo"></use>
+                </svg>
+            </div>
+            <ul class="header__list">
+                <li><a href="#premise" class="header__list--link">the premise</a></li>
+                <li><a href="#projects" class="header__list--link">the projects</a></li>
+                <li><a href="http://www.kariminger.com" class="header__list--link">the person</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="edit">
+        <h1 class="h1--lightweight">Create Post</h1>
+        <form class="edit__form" method="POST" action="/posts">
+            <div class="edit__formLine">
+                <input type="text" class="edit__field edit__field--week" name="weekNumber" placeholder="week number">
+                <input type="text" class="edit__field edit__field--name" name="projectName" placeholder="project name">
+            </div>
+            <div class="edit__formLine">
+                <input type="text" class="edit__field edit__field--github" name="GithubURL" placeholder="Github repo address">
+                <input type="text" class="edit__field edit__field--url" name="siteURL" placeholder="site address">
+            </div>
+            <textarea class="edit__field edit__field--paragraph" name="synopsis" placeholder="synopsis"></textarea>
+            <textarea class="edit__field edit__field--paragraph" name="processTxt" placeholder="the process"></textarea>
+            <textarea class="edit__field edit__field--paragraph" name="challengesTxt" placeholder="challenges"></textarea>
+            <textarea class="edit__field edit__field--paragraph" name="takeawaysTxt" placeholder="takeaways"></textarea>
+            <div class="edit__formLine">
+                <input type="text" class="edit__field edit__field--image" name="imageName" placeholder="image name">
+                <input type="text" class="edit__field edit__field--name" name="designURL" placeholder="design image URL">
+            </div>
+            <input type="text" class="edit__field" name="tech" placeholder="tech used">
+            <button class="edit__button" type="submit">Submit</button>
+        </form>
+    </main>
+</body>
+</html>

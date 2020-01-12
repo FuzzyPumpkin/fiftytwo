@@ -56,6 +56,12 @@ html {
   font-size: 62.5%;
 }
 
+@media (max-width: 1300px) {
+  html {
+    font-size: 50%;
+  }
+}
+
 @media (max-width: 450px) {
   html {
     font-size: 40%;
@@ -78,7 +84,7 @@ body {
 }
 
 .login, .edit {
-  margin-top: 10.5rem;
+  margin-top: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -157,18 +163,9 @@ body {
   background-color: rgba(79, 208, 230, 0.3);
 }
 
-.edit__checkbox {
-  height: 2.1rem;
-  width: 2.1rem;
-}
-
-.edit__checkboxLabel {
-  font-size: 2.4rem;
-  margin-left: 1rem;
-}
-
 .edit__button {
   width: 30%;
+  margin-top: 5rem;
 }
 
 .edit__field--name, .edit__field--url {
@@ -209,25 +206,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.edit__formLine--tech {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.edit__tech {
-  margin: 3rem 5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .header {

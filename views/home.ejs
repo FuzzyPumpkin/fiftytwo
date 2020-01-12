@@ -59,7 +59,7 @@
                         <img class="projects__thumbnail" src="/images/<%= post.imageName%>.jpg" alt="project preview image">
                     </div>
                     <div class="projects__techContainer">
-                        <% post.tech.forEach(function(tech) { %>
+                        <% post.tech.split(",").forEach(function(tech) { %>
                             <div class="projects__tech">
                                 <svg class="projects__tech--icon" aria-label="<%= tech %>">
                                     <use xlink:href="/images/symbol-defs.svg#icon-<%= tech %>"></use>

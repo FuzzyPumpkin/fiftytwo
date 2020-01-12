@@ -10,7 +10,7 @@ const PostSchema = new mongoose.Schema({
     challengesTxt: String,
     takeawaysTxt: String,
     imageName: String,
-    tech: Array,
+    tech: String,
     synopsis: String,
     designURL: String
 });

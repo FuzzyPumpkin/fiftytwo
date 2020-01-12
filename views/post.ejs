@@ -39,7 +39,7 @@
     <main class="post">
         <h2 class="post__subheading">- technologies used -</h2>
         <ul class="post__list">
-            <% post.tech.forEach(function(tech) { %>
+            <% post.tech.split(",").forEach(function(tech) { %>
                 <li class="post__listitem"><%= tech %></li>
             <% }) %>
         </ul>
