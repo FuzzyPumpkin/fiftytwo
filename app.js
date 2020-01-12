@@ -4,11 +4,13 @@ const bodyParser = require("body-parser");
 const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 const Posts = require("./models/posts.js");
+const methodOverride = require("method-override");
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
+app.use(methodOverride("_method"));
 
 
 //DB connection
@@ -24,7 +26,8 @@ mongoose.connect('mongodb+srv://kariminger:12mI94Zzr94P2AY@cluster0-fomve.mongod
         console.log("ERROR:", err.message);
     });
 
-//Routes
+//---ROUTES---
+// Edit
 app.get("/edit", function(req, res){
     res.render("edit");
 });
@@ -36,9 +39,6 @@ app.get("/edit/:id", function(req, res){
         }
     });
 });
-app.get("/new", function(req, res){
-    res.render("new");
-});
 app.put("/posts/:id", function(req, res){
     Posts.findByIdAndUpdate(req.params.id, req.body.post, function(err, updatedPost){
        if(err){
@@ -47,6 +47,10 @@ app.put("/posts/:id", function(req, res){
            res.redirect("/posts/" + req.params.id);
        }
     });
+});
+// Create
+app.get("/new", function(req, res){
+    res.render("new");
 });
 app.post("/posts", function(req, res){
     const weekNumber =  req.body.weekNumber;
@@ -69,11 +73,11 @@ app.post("/posts", function(req, res){
        else{res.redirect("/");}
     });
  });
-
+//Login
 app.get("/login", function(req, res){
     res.render("login");
 });
-
+//Show
 app.get("/posts/:id", function(req, res){
     Posts.findById(req.params.id).exec(function(err, foundPost){
        if(err){console.log(err);}
@@ -82,7 +86,6 @@ app.get("/posts/:id", function(req, res){
        }
     });
 });
-
 app.get("/", (req, res) => {
     Posts.find({}, function(err, allPosts){
         if(err){console.log("error in retrieving posts");}
