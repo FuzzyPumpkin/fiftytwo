@@ -131,4 +131,6 @@ app.get("/", (req, res) => {
 });
 
 
-app.listen(port, function() {console.log("server started");});
+app.listen(process.env.PORT, process.env.IP, function(){
+    console.log("server started"); 
+ });
