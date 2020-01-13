@@ -18,13 +18,23 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 
+
 //Passport config for authentication
 app.use(require("express-session")({
     secret: "Pumpkin is yummy",
     resave: false,
     saveUninitialized: false,
-    store: new MongoStore({ mongooseConnection: mongoose.connection })
+    store: new MongoStore({
+        url: 'mongodb+srv://kariminger:12mI94Zzr94P2AY@cluster0-fomve.mongodb.net/test?retryWrites=true&w=majority',
+    })
 }));
+//DB connection
+mongoose.connect('mongodb+srv://kariminger:12mI94Zzr94P2AY@cluster0-fomve.mongodb.net/test?retryWrites=true&w=majority', 
+    {
+        useNewURLParser: true,
+        useCreateIndex: true,
+        useUnifiedTopology: true
+    });
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -45,13 +55,6 @@ const isLoggedIn = function(req, res, next){
 }
 
 
-//DB connection
-mongoose.connect('mongodb+srv://kariminger:12mI94Zzr94P2AY@cluster0-fomve.mongodb.net/test?retryWrites=true&w=majority', 
-    {
-        useNewURLParser: true,
-        useCreateIndex: true,
-        useUnifiedTopology: true
-    });
 
 //---ROUTES---
 // Edit
