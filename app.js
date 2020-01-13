@@ -46,12 +46,7 @@ mongoose.connect('mongodb+srv://kariminger:12mI94Zzr94P2AY@cluster0-fomve.mongod
     {
         useNewURLParser: true,
         useCreateIndex: true,
-        useNewUrlParser: true,
         useUnifiedTopology: true
-    }).then(()=> {
-        console.log("connected to database");
-    }).catch(err => {
-        console.log("ERROR:", err.message);
     });
 
 //---ROUTES---
