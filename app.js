@@ -24,9 +24,6 @@ app.use(require("express-session")({
     secret: "Pumpkin is yummy",
     resave: false,
     saveUninitialized: false,
-    store: new MongoStore({
-        url: 'mongodb+srv://kariminger:12mI94Zzr94P2AY@cluster0-fomve.mongodb.net/test?retryWrites=true',
-    })
 }));
 //DB connection
 mongoose.connect('mongodb+srv://kariminger:12mI94Zzr94P2AY@cluster0-fomve.mongodb.net/test?retryWrites=true', 
