@@ -1,4 +1,5 @@
 const express = require("express");
+const session = require('express-session');
 const app = express();
 const bodyParser = require("body-parser");
 const port = process.env.PORT || 3000;
@@ -8,6 +9,8 @@ const User = require("./models/users.js");
 const methodOverride = require("method-override");
 const passport = require("passport");
 const localStrategy = require("passport-local");
+const MongoStore = require('connect-mongo')(session);
+
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -19,7 +22,8 @@ app.use(methodOverride("_method"));
 app.use(require("express-session")({
     secret: "Pumpkin is yummy",
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
 app.use(passport.initialize());
@@ -126,6 +130,6 @@ app.get("/", (req, res) => {
 });
 
 
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(port, process.env.IP, function(){
     console.log("server started"); 
  });
