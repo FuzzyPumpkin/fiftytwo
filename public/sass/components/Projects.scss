@@ -66,6 +66,10 @@
             background-color: $color-white;
             @include shadow;
         }
+        &:hover {
+            cursor: pointer;
+            color: $color-blue;
+        }
     }
     &__num {
         position: absolute;
