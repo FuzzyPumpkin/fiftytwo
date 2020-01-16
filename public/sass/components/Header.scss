@@ -4,7 +4,7 @@
     &__container {
         @include flex-row;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-evenly;
         padding: 17rem 9rem;
         @include respond(ipad){
             padding: 10rem 7rem 5rem 7rem;
