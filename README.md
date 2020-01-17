@@ -7,6 +7,7 @@ Repetition builds expertise. So why not focus on one project exclusively for a w
 ## Technologies Utilized for fiftytwo/52
 * Node.js
 * Sass
+* MongoDB
 * JavaScript
 * HTML (& ejs)
 
