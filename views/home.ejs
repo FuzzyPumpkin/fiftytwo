@@ -56,7 +56,7 @@
                 <article class="projects__card">
                     <div class="projects__num"><%= post.weekNumber %></div>
                     <div class="projects__thumbnailContainer">
-                        <img class="projects__thumbnail" src="/images/<%= post.imageName%>.jpg" alt="project preview image">
+                        <img class="projects__thumbnail" src="/images/<%= post.imageName%>" alt="project preview image">
                     </div>
                     <div class="projects__techContainer">
                         <% post.tech.split(",").forEach(function(tech) { %>
